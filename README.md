@@ -14,3 +14,6 @@ Some old camera module to animate on beat
 
 <H3>module_dynatex</H3>
 creates a dynamictexture with input (usually fft)
+
+<H3>module_linefromto</H3>
+to convert xyz to from to 
