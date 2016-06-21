@@ -8,3 +8,6 @@ but it does what I needed it for.
 <H3>module_aligntonormals</H3>
 Everything is in the title, with resampling 
 everything on CPU not very efficient :) 
+
+<H3>module_beatcam</H3>
+Some camera module to animate on beat 
