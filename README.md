@@ -10,4 +10,4 @@ Everything is in the title, with resampling
 everything on CPU not very efficient :) 
 
 <H3>module_beatcam</H3>
-Some camera module to animate on beat 
+Some old camera module to animate on beat 
