@@ -11,3 +11,6 @@ everything on CPU not very efficient :)
 
 <H3>module_beatcam</H3>
 Some old camera module to animate on beat 
+
+<H3>module_dynatex</H3>
+creates a dynamictexture with input (usually fft)
