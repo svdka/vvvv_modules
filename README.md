@@ -5,3 +5,6 @@ Some very primitive module to export a 3d mesh into jpg snapshots from different
 Could be mucher cleaner, this thing just writes until you stop in, no counting feedback on files & so on,
 but it does what I needed it for. 
 
+<H3>module_aligntonormals</H3>
+Everything is in the title, with resampling 
+everything on CPU not very efficient :) 
