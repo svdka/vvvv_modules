@@ -1,0 +1,145 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
+   <PATCH nodename="D:\VVVV\vvvv\modules\SVDKMODS\useful\svdk_dynamictexture.v4p" systemname="svdk_dynamictexture" filename="D:\VVVV\vvvv\modules\SVDKMODS\useful\svdk_dynamictexture.v4p" scrollx="0" scrolly="0">
+   <BOUNDS type="Window" left="17550" top="8475" width="9000" height="6000">
+   </BOUNDS>
+   <NODE systemname="DynamicTexture (DX11.Texture 2d Color)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="DynamicTexture (DX11.Texture 2d Color)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="660" top="3135" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Data" visible="1">
+   </PIN>
+   <PIN pinname="Width" visible="1">
+   </PIN>
+   <PIN pinname="Height" visible="1">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="HSV (Color Join)" nodename="HSV (Color Join)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="1365" top="2430" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Output" dstnodeid="0" dstpinname="Data">
+   </LINK>
+   <NODE systemname="FFT (DShow9 4Channels)" filename="%VVVV%\lib\nodes\modules\DShow9\FFT (DShow9 4Channels).v4p" nodename="FFT (DShow9 4Channels)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="1665" top="1245" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="AudioDriver" visible="1">
+   </PIN>
+   <PIN pinname="FFT" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="3" systemname="IOBox (Enumerations)">
+   <BOUNDS type="Box" left="2070" top="660" width="1590" height="270">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2070" top="660" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="|Mon (UA-101)|">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="AudioDriver">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Output Enum" dstnodeid="2" dstpinname="AudioDriver">
+   </LINK>
+   <NODE systemname="Damper (Animation)" nodename="Damper (Animation)" componentmode="Hidden" id="4">
+   <BOUNDS type="Node" left="1695" top="1980" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Go To Position" visible="1" slicecount="256" values="0.072680489897254,0.24283623348535,0.873148054107337,0.451220154209267,0.251962156236505,0.214603422567689,0.212021229073907,0.236431077434533,0.282605171307842,0.191011755027507,0.285721540808157,0.546915955322666,0.805669001066281,0.691100195475711,0.295273537013634,0.602394718399123,0.701472528822786,0.552967401259594,0.418177070307545,0.264495786338558,0.262012163448262,0.114243869110773,0.704358200723076,0.375591195984498,0.9791714984187,1.34556197531039,1.52080124069449,0.380478333644982,0.660630201138909,1.00085887586182,0.662826382795844,0.77102860449311,0.461051330517826,0.296904106701511,0.772756782874968,0.749825358645627,1.31405532012356,1.24913368474602,1.07773073323554,0.177057165449816,0.495312329868809,0.510792358746912,0.580106203703576,0.555730963207598,0.837775635674987,1.32943271111254,2.39369057075538,2.56699084414026,1.63216326913115,1.22777424651144,0.48094317914351,1.28641282751307,1.69953404772076,1.69583501178795,1.26922791123279,0.736235543361417,0.668839852650836,0.682318241953012,1.55057969771596,0.715317506190144,1.34660080365959,1.87868149631822,1.00602305639487,0.439517268031716,0.936493917431639,0.776997617418116,0.520221124842552,0.483065696353654,0.949676672570471,0.558221710158839,0.834294230082242,0.296983174151916,1.62340582736588,1.60704253688598,1.32432379893452,0.829669861368797,0.503802921980964,0.940869396279368,0.230937673785078,0.570526402658499,0.403996453001903,0.559255705695271,0.811021207153678,1.01685083406797,1.6875274789648,1.43947927377921,1.13703103120581,1.19175824379397,0.643436794299633,0.269075203469309,0.541423710813694,0.576721882264757,0.415028956052789,0.290627462271913,1.15674322834816,1.43727938828034,1.18756827691003,0.652563124174728,0.689686906090466,0.784150367629008,0.776973291083085,1.03430123849682,0.94970057320168,0.390584775290658,0.681220012688231,0.0397285137575578,1.24107568802311,0.724811693548308,0.293915257030855,0.889547274623514,0.825221074459222,0.14792198553966,0.533270364587412,0.597926256380889,1.21109959926318,0.76121787414421,0.334589677332699,0.712071957610839,0.56089228950398,0.560457831162728,0.668797128079922,1.19891230600378,0.80958249421508,0.496139599478628,1.12994753417825,0.259556386794582,0.878874128901696,0.590440391502503,1.10000585917419,1.03792476011787,0.28022566837931,0.210480903563281,0.354614697427611,0.289906756187235,0.182187831164037,0.40026946449386,0.506506278742856,0.387350076755383,0.419432852880414,0.574497946844633,0.447165224413425,0.0790181820971496,0.271057511645148,0.554140749207753,0.25504136144576,0.538289823693865,0.162571120232426,0.737558898860839,1.14810894744575,0.764449265649585,0.746370605494298,0.316925205959071,0.327288414585347,0.278043220909406,0.254853234731673,0.305434141541683,0.120405988584436,0.309660529365919,0.274337932045378,0.534645219148612,0.533843010979218,0.403220292384228,0.365240141084497,0.5622169846639,0.480577887448177,0.443970032733573,0.448531101923191,0.369599190989609,0.210040678273865,0.177625858094475,0.284391270583907,0.478612737927635,0.689014599245505,0.126607955118615,0.624027661559784,0.289285896445327,0.0157003496981495,0.0928834879531161,0.174391816526326,0.305876925856195,0.200097985787169,0.1833494632611,0.286527127945886,0.197142267615534,0.245420291262786,0.179481335311785,0.294061254450853,0.432714008812521,0.108246000494473,0.0889402187264768,0.135847780139452,0.129498586719352,0.288648454732199,0.205364550253336,0.0693635180436153,0.234145043091787,0.104250127246199,0.355831968255708,0.479720720575097,0.361543279937611,0.185988628285234,0.147574199435889,0.146466450095544,0.140047585510329,0.127898546881652,0.0970322194326269,0.112216304671206,0.111568621165429,0.139553122114573,0.215023026843819,0.133912143326025,0.166639183546411,0.105697861495813,0.257098920666643,0.151018563848313,0.184781341604433,0.0749216963933574,0.106232112450909,0.206282144448262,0.085221100449363,0.117088140981675,0.100103577050982,0.0693553293128796,0.0861017105370967,0.115464713103766,0.0983244513887429,0.051448346262863,0.0577849416759525,0.0253048858930804,0.0359988317781408,0.0749005093555951,0.108971007789186,0.0181293625566809,0.0531045789665453,0.0535649643070228,0.0967307079142647,0.0492701944495001,0.0502905505057729,0.0793364126819557,0.049054480566683,0.0837361446062157,0.0548645494839671,0.0871221577932236,0.0590056292221853,0.0534179689512916,0.0796396616595597,0.107724630750781,0.0477857717527483,0.0355650682512983,0.0776057607852159,0.068811995942582,0.0447188855899899,0.0514646788687562,0.0604625593242363,0.0221550917257508,0.0269896011509065">
+   </PIN>
+   <PIN pinname="Position Out" visible="1">
+   </PIN>
+   <PIN pinname="FilterTime" slicecount="1" values="0.91" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Position Out" dstnodeid="1" dstpinname="Value">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="5" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="525" top="1875" width="525" height="315">
+   </BOUNDS>
+   <BOUNDS type="Node" left="525" top="1875" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="16">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Height - Width|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Width">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Height">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="6" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="690" top="3855" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="690" top="3855" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Texture Out|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Texture Out" dstnodeid="6" dstpinname="Input Node">
+   </LINK>
+   <PACK Name="imagepack" Version="0.1.0">
+   </PACK>
+   <PACK Name="VVVV.Packs" Version="0.2.0">
+   </PACK>
+   <PACK Name="addonpack" Version="33.7.0">
+   </PACK>
+   <NODE systemname="Multiply (Value)" nodename="Multiply (Value)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="3270" top="1755" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="FFT" dstnodeid="7" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Output" dstnodeid="4" dstpinname="Go To Position">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="8" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="4500" top="795" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4500" top="795" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Input 2|">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="Y Output Value" dstnodeid="7" dstpinname="Input 2">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="9" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="5940" top="600" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5940" top="600" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.91">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="s">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="FilterTime">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Y Output Value" dstnodeid="4" dstpinname="FilterTime">
+   </LINK>
+   </PATCH>
